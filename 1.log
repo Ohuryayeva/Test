@@ -1,0 +1,103 @@
+2014-06-21T18:22:10.369806+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2014-06-21T18:22:10.369807+00:00 app[web.1]:     at Function.Module._load (module.js:312:12)
+2014-06-21T18:22:10.369808+00:00 app[web.1]:     at Function.Module.runMain (module.js:497:10)
+2014-06-21T18:22:10.367807+00:00 app[web.1]: events.js:72
+2014-06-21T18:22:11.536615+00:00 heroku[web.1]: State changed from starting to crashed
+2014-06-21T18:22:11.537180+00:00 heroku[web.1]: State changed from crashed to starting
+2014-06-21T18:22:09.417149+00:00 heroku[web.1]: Starting process with command `node server.js`
+2014-06-21T18:22:11.537969+00:00 heroku[web.1]: Process exited with status 8
+2014-06-21T18:22:14.790702+00:00 app[web.1]: 
+2014-06-21T18:22:14.798354+00:00 app[web.1]: Error: listen EACCES
+2014-06-21T18:22:14.798362+00:00 app[web.1]:     at Server.listen (net.js:1138:5)
+2014-06-21T18:22:14.798365+00:00 app[web.1]:     at Module._compile (module.js:456:26)
+2014-06-21T18:22:14.798369+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2014-06-21T18:22:14.798372+00:00 app[web.1]:     at Function.Module.runMain (module.js:497:10)
+2014-06-21T18:22:14.793907+00:00 app[web.1]:         throw er; // Unhandled 'error' event
+2014-06-21T18:22:14.798357+00:00 app[web.1]:     at errnoException (net.js:904:11)
+2014-06-21T18:22:14.793913+00:00 app[web.1]:               ^
+2014-06-21T18:22:14.798359+00:00 app[web.1]:     at Server._listen2 (net.js:1023:19)
+2014-06-21T18:22:14.798360+00:00 app[web.1]:     at listen (net.js:1064:10)
+2014-06-21T18:22:14.798364+00:00 app[web.1]:     at Object.<anonymous> (/app/server.js:43:4)
+2014-06-21T18:22:14.798367+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:474:10)
+2014-06-21T18:22:14.798371+00:00 app[web.1]:     at Function.Module._load (module.js:312:12)
+2014-06-21T18:22:14.791165+00:00 app[web.1]: events.js:72
+2014-06-21T18:22:13.464888+00:00 heroku[web.1]: Starting process with command `node server.js`
+2014-06-21T18:22:16.109853+00:00 heroku[web.1]: Process exited with status 8
+2014-06-21T18:22:16.861098+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=epam-tasks-app.herokuapp.com request_id=de67e068-03b9-4f8a-a40a-b4a1f8dd9b27 fwd="89.105.248.116" dyno= connect= service= status=503 bytes=
+2014-06-21T18:22:17.184257+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=epam-tasks-app.herokuapp.com request_id=ad4dde8c-003a-4d9f-ae8f-744403fe1086 fwd="89.105.248.116" dyno= connect= service= status=503 bytes=
+2014-06-21T18:22:16.124635+00:00 heroku[web.1]: State changed from starting to crashed
+2014-06-21T18:33:31.884149+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=epam-tasks-app.herokuapp.com request_id=3dc2b805-7af9-41b4-96ff-031dfc054117 fwd="89.105.248.116" dyno= connect= service= status=503 bytes=
+2014-06-21T18:33:31.581959+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=epam-tasks-app.herokuapp.com request_id=29274f8c-728d
+-498d-ab7d-3e0cef6fde75 fwd="89.105.248.116" dyno= connect= service= status=503 bytes=
+2014-06-21T18:36:36+00:00 heroku[slug-compiler]: Slug compilation started
+2014-06-21T18:36:42+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-06-21T18:36:42.123688+00:00 heroku[web.1]: State changed from crashed to starting
+2014-06-21T18:36:41.925470+00:00 heroku[api]: Deploy 596c538 by vvkohut@gmail.com
+2014-06-21T18:36:41.925533+00:00 heroku[api]: Release v5 created by vvkohut@gmail.com
+2014-06-21T18:36:45.193381+00:00 app[web.1]: events.js:72
+2014-06-21T18:36:45.195657+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:474:10)
+2014-06-21T18:36:45.195662+00:00 app[web.1]:     at Function.Module.runMain (module.js:497:10)
+2014-06-21T18:36:45.192934+00:00 app[web.1]: 
+2014-06-21T18:36:45.193678+00:00 app[web.1]:         throw er; // Unhandled 'error' event
+2014-06-21T18:36:45.193684+00:00 app[web.1]:               ^
+2014-06-21T18:36:45.195647+00:00 app[web.1]:     at errnoException (net.js:904:11)
+2014-06-21T18:36:45.195649+00:00 app[web.1]:     at Server._listen2 (net.js:1023:19)
+2014-06-21T18:36:45.195653+00:00 app[web.1]:     at Server.listen (net.js:1138:5)
+2014-06-21T18:36:45.195650+00:00 app[web.1]:     at listen (net.js:1064:10)
+2014-06-21T18:36:45.195644+00:00 app[web.1]: Error: listen EACCES
+2014-06-21T18:36:45.195654+00:00 app[web.1]:     at Object.<anonymous> (/app/server.js:43:4)
+2014-06-21T18:36:45.195656+00:00 app[web.1]:     at Module._compile (module.js:456:26)
+2014-06-21T18:36:45.195660+00:00 app[web.1]:     at Function.Module._load (module.js:312:12)
+2014-06-21T18:36:45.195659+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2014-06-21T18:36:46.468161+00:00 heroku[web.1]: State changed from crashed to starting
+2014-06-21T18:36:46.467361+00:00 heroku[web.1]: State changed from starting to crashed
+2014-06-21T18:36:44.126904+00:00 heroku[web.1]: Starting process with command `node server.js`
+2014-06-21T18:36:46.446590+00:00 heroku[web.1]: Process exited with status 8
+2014-06-21T18:36:49.489673+00:00 app[web.1]: events.js:72
+2014-06-21T18:36:49.489876+00:00 app[web.1]:               ^
+2014-06-21T18:36:49.489856+00:00 app[web.1]:         throw er; // Unhandled 'error' event
+2014-06-21T18:36:49.491625+00:00 app[web.1]:     at Server._listen2 (net.js:1023:19)
+2014-06-21T18:36:49.491627+00:00 app[web.1]:     at listen (net.js:1064:10)
+2014-06-21T18:36:49.491629+00:00 app[web.1]:     at Server.listen (net.js:1138:5)
+2014-06-21T18:36:49.491631+00:00 app[web.1]:     at Object.<anonymous> (/app/server.js:43:4)
+2014-06-21T18:36:49.489280+00:00 app[web.1]: 
+2014-06-21T18:36:49.491634+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:474:10)
+2014-06-21T18:36:49.491635+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2014-06-21T18:36:49.491632+00:00 app[web.1]:     at Module._compile (module.js:456:26)
+2014-06-21T18:36:49.491624+00:00 app[web.1]:     at errnoException (net.js:904:11)
+2014-06-21T18:36:49.491621+00:00 app[web.1]: Error: listen EACCES
+2014-06-21T18:36:49.491637+00:00 app[web.1]:     at Function.Module._load (module.js:312:12)
+2014-06-21T18:36:49.491639+00:00 app[web.1]:     at Function.Module.runMain (module.js:497:10)
+2014-06-21T18:36:50.962667+00:00 heroku[web.1]: State changed from starting t
+o crashed
+2014-06-21T18:36:51.753317+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=epam-tasks-app.herokuapp.com request_id=55df2405-908f-4731-ad72-61a2ce684371 fwd="89.105.248.116" dyno= connect= service= status=503 bytes=
+2014-06-21T18:36:52.188629+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=epam-tasks-app.herokuapp.com request_id=b9acf0d2-6942-40b9-ba3f-0ca8ed93aa4a fwd="89.105.248.116" dyno= connect= service= status=503 bytes=
+2014-06-21T18:36:48.138594+00:00 heroku[web.1]: Starting process with command `node server.js`
+2014-06-21T18:36:50.951724+00:00 heroku[web.1]: Process exited with status 8
+2014-06-21T18:37:15.185749+00:00 heroku[run.1052]: Awaiting client
+2014-06-21T18:37:15.314060+00:00 heroku[run.1052]: State changed from starting to up
+2014-06-21T18:37:13.112414+00:00 heroku[api]: Starting process with command `node` by vvkohut@gmail.com
+2014-06-21T18:37:15.244210+00:00 heroku[run.1052]: Starting process with command `node`
+2014-06-21T18:37:48.047629+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=epam-tasks-app.herokuapp.com request_id=adc13199-5010-4372-bb43-c90e48785d62 fwd="89.105.248.116" dyno= connect= service= status=503 bytes=
+2014-06-21T18:37:48.329618+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=epam-tasks-app.herokuapp.com request_id=796c5cd2-a845-4e06-a889-7c07170b7c4d fwd="89.105.248.116" dyno= connect= service= status=503 bytes=
+2014-06-21T18:38:22.619195+00:00 heroku[run.1052]: State changed from up to complete
+2014-06-21T18:38:22.606933+00:00 heroku[run.1052]: Process exited with status 0
+2014-06-21T18:39:52.691125+00:00 heroku[web.1]: State changed from crashed to starting
+2014-06-21T18:39:55.190476+00:00 app[web.1]:     at Server._listen2 (net.js:1023:19)
+2014-06-21T18:39:55.188086+00:00 app[web.1]:         throw er; // Unhandled 'error' event
+2014-06-21T18:39:55.190482+00:00 app[web.1]:     at Module._compile (module.js:456:26)
+2014-06-21T18:39:55.190480+00:00 app[web.1]:     at Server.listen (net.js:1138:5)
+2014-06-21T18:39:55.190485+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2014-06-21T18:39:55.190471+00:00 app[web.1]: Error: listen EACCES
+2014-06-21T18:39:55.187002+00:00 app[web.1]: 
+2014-06-21T18:39:55.190475+00:00 app[web.1]:     at errnoException (net.js:904:11)
+2014-06-21T18:39:55.190481+00:00 app[web.1]:     at Object.<anonymous> (/app/server.js:43:4)
+2014-06-21T18:39:55.190490+00:00 app[web.1]:     at Function.Module.runMain (module.js:497:10)
+2014-06-21T18:39:55.190478+00:00 app[web.1]:     at listen (net.js:1064:10)
+2014-06-21T18:39:55.190484+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:474:10)
+2014-06-21T18:39:55.188306+00:00 app[web.1]:               ^
+2014-06-21T18:39:55.187671+00:00 app[web.1]: events.js:72
+2014-06-21T18:39:55.190488+00:00 app[web.1]:     at Function.Module._load (module.js:312:12)
+2014-06-21T18:39:56.491999+00:00 heroku[web.1]: State changed from starting to crashed
+2014-06-21T18:39:54.195985+00:00 heroku[web.1]: Starting process with command `node server.js`
+2014-06-21T18:39:56.486663+00:00 heroku[web.1]: Process exited with status 8
