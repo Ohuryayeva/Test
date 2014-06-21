@@ -2,6 +2,7 @@ var http = require('http');
 var fs = require('fs');
 var mime = require('mime');
 var couchUrl = "epam-tasks-app.iriscouch.com";
+var port = process.env.PORT || 8888;
 console.log("Starting")
 http.createServer(function(req, res){
     if (req.url.lastIndexOf("/couch", 0) === 0){// check if url starts with '/couch'
@@ -39,5 +40,5 @@ http.createServer(function(req, res){
             }
         });
     }
-}).listen(8080);
-console.log("server started ...");
+}).listen(port);
+console.log("server started on port "+ port );
