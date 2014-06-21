@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>FrontEndLab</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <textarea id="planned_issues"></textarea>
+    <input type="button" value="Create new task" onclick="AddIssue()">
+
+<div class="task">
+    <h2>Заплановані задачі</h2>
+    <ul id="planned" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+</div>
+<div class="task">
+    <h2>В процесі</h2>
+    <ul id="started" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+</div>
+<div class="task">
+    <h2>Завершені</h2>
+    <ul id="finished" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+</div>
+
+
+</body>
+</html>

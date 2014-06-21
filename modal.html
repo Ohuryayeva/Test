@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body>
+<div class="md-modal md-effect" id="modal">
+    <div class="md-content">
+        <h3>Create new task</h3>
+        <a href="#" onclick="showHideModal()"><span>x</span></a>
+        <form>
+            <ul class="element">
+                <li>
+                <input type="checkbox" name="tDeadline" id="t_deadline" value="Task with deadline" onchange="showHideCat('t_deadline','taskWithDeadline')">
+                <label for="t_deadline">Task with deadline</label>
+                </li>
+                <li>
+                <input type="checkbox" name="tTime" id="t_time" value="Task with certain time" onchange="showHideCat('t_time','t_certain_t')">
+                <label for="t_time">Task with certain time</label><br>
+                </li>
+                <li>
+                    <input type="checkbox" name="tCheckbox" id="t_checkbox" value="Task with checkbox"onchange="showHideCat('t_checkbox','taskWithCheckbox')" >
+                    <label for="t_checkbox">Task with checkbox</label>
+                </li>
+            </ul>
+            <div class="element">
+                <div class="label">
+                    <label for="task_name">Name</label>
+                </div>
+                <div class="data">
+                    <input type="text" name="task_name" id="task_name" required="required">
+                </div>
+            </div>
+            <div class="element">
+                <div class="label">
+                    <label for="task_desc">Description</label>
+                </div>
+                <div class="data">
+                    <textarea name="task_desc" id="task_desc"></textarea>
+                </div>
+            </div>
+            <div class="element" id="taskWithDeadline">
+                <div class="label">
+                    <label for="task_deadline">Deadline</label>
+                </div>
+                <div class="data">
+                    <input type="datetime-local" name="task_deadline" id="task_deadline">
+                </div>
+            </div>
+            <div class="element" id="t_certain_t">
+                <div class="label">
+                    <label for="task_time">Time to do this</label>
+                </div>
+                <div class="data">
+                    <input type="time" name="task_time" id="task_time">
+                </div>
+            </div>
+            <div class="element" id="taskWithCheckbox">
+                <div class="label">
+                    <label for="task_checkbox">Name of checklabel</label>
+                </div>
+                <div class="data">
+                    <input type="text" name="taskCheckbox" id="task_checkbox">
+                    <input type="button" value="Add" onclick="addCheckOption()">
+                    <input type="button" value="Delete" onclick="delCheckOption()">
+                    <ul id="ulCheckbox">
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Create" onclick="addTask()">
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<button class="md-trigger" data-modal="modal" onclick="showHideModal()">Add new task</button>
+
+
+
+<div class="md-overlay"></div>
+<ul id="planned"></ul>
+<script src="js/modalEffects.js"></script>
+</body>
+</html>
