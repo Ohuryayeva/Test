@@ -14,6 +14,7 @@ ul#planned, ul#started, ul#finished{
     width: 200px;
     margin-right: 20px;
     padding: 0;
+    float: left;
 }
 ul#planned li,ul#started li , ul#finished li{
     border: 1px solid #000000;
@@ -134,7 +135,7 @@ ul#finished{
     border-radius: 3px;
 }
 
-.md-content input[type="text"],.md-content input[type="time"],.md-content textarea{
+.md-content input[type="text"],.md-content input[type="time"], .md-content textarea{
     border: 1px solid transparent;
     -webkit-box-shadow: 2px 3px 4px 0px rgba(0, 77, 105, 0.9);
     -moz-box-shadow:    2px 3px 4px 0px rgba(0, 77, 105, 0.9);
@@ -144,7 +145,10 @@ ul#finished{
     border-radius: 7px;
     padding-right: 5px;
 }
-
+.md-content input#create{
+    margin: 10px 40%;
+    padding: 6px 20px;
+}
 .md-content input[type="submit"] {
     display: block;
     margin: 0 auto;

@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div>
-                <input type="submit" value="Create" onclick="addTask()">
+                <input type="button" id="create" value="Create" onclick="addTask()">
             </div>
         </form>
 
@@ -83,7 +83,9 @@
 
 
 <div class="md-overlay"></div>
-<ul id="planned"></ul>
-<script src="js/modalEffects.js"></script>
+<ul id="planned" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+<ul id="started" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+<script src="js/couch.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
