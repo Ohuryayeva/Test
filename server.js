@@ -1,4 +1,7 @@
 var couchUrl = "epam-tasks-app.iriscouch.com";
+var couchPort = 80;
+//var couchUrl = "localhost";
+//var couchPort = 5984;
 
 
 var http = require('http');
@@ -12,17 +15,15 @@ http.createServer(function (req, res) {
         headers.host = couchUrl;
 
         delete headers.authorization;// temporary
-        var data;
 
+        var data;
         var options = {
             hostname: couchUrl,
+            port: couchPort,
             path: req.url.replace("/couch", ""),
             method: req.method,
             headers: headers
         };
-        if (req.port) {
-            options.port = req.port;
-        }
 
         var request = http.request(options, function (response) {
             response.pipe(res);
@@ -39,20 +40,20 @@ http.createServer(function (req, res) {
 
     } else {
         var file = req.url === '/' ? 'index.html' : req.url.substr(1);
-            fs.exists(file, function (exists) {
-                if (exists) {
-                    var stat = fs.statSync(file);
+        fs.exists(file, function (exists) {
+            if (exists) {
+                var stat = fs.statSync(file);
 
-                    res.writeHead(200, {
-                        'Content-Type': mime.lookup(file),
-                        'Content-Length': stat.size
-                    });
+                res.writeHead(200, {
+                    'Content-Type': mime.lookup(file),
+                    'Content-Length': stat.size
+                });
 
-                    fs.createReadStream(file).pipe(res);
-                } else {
-                    res.statusCode = 404;
-                    res.end();
-                }
+                fs.createReadStream(file).pipe(res);
+            } else {
+                res.statusCode = 404;
+                res.end();
+            }
         });
     }
 }).listen(port);
