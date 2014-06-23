@@ -23,7 +23,7 @@ var Couch = {
     getTask: function(task_id){
         var xhr = new XMLHttpRequest();
         var result;
-        xhr.open('GET', '/couch/myproject/'+ task_id, false);
+        xhr.open('GET', '/couch/' + db +'/'+ task_id, false);
         xhr.onreadystatechange = function () {
 
             if (xhr.readyState != 4) return; //return if not complete
@@ -41,7 +41,7 @@ var Couch = {
         var xhr = new XMLHttpRequest();
         var plannedUl = document.getElementById("planned");
         var data_array = [];
-        xhr.open('GET', '/couch/myproject/_all_docs?include_docs=true', false);
+        xhr.open('GET', '/couch/' + db +'/_all_docs?include_docs=true', false);
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState != 4) return; //return if not complete
@@ -68,7 +68,7 @@ var Couch = {
         task.last_change = last_change;
         task.time = task_time;
         var xhr = new XMLHttpRequest();
-        xhr.open('PUT', '/couch/myproject/'+ task_id, false);
+        xhr.open('PUT', '/couch/' + db +'/'+ task_id, false);
         xhr.send(JSON.stringify(task));
     }
 }

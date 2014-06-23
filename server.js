@@ -1,7 +1,7 @@
-var couchUrl = "epam-tasks-app.iriscouch.com";
-var couchPort = 80;
-//var couchUrl = "localhost";
-//var couchPort = 5984;
+//var couchUrl = "epam-tasks-app.iriscouch.com";
+//var couchPort = 80;
+var couchUrl = "localhost";
+var couchPort = 5984;
 
 
 var http = require('http');

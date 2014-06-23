@@ -1,9 +1,10 @@
-/*Operation with modal window*/
+
 var CONTEXT = {
     tasks : {},
     intervalIds:{},
     auth_token: ''
-};
+}
+/*Operation with modal window*/
 function showHideModal(){
     var modal_window = document.getElementById("modal");
     modal_window.classList.toggle("md-show");
@@ -105,31 +106,25 @@ function displayTask(task){
    /* countdown(task);*/
     countdownSpecial(task);
 }
-function observeTime(task_id) {
-    var half_time=[];
+
+function observeTime(task_id, countdown_time) {
     var li_time = document.getElementById(task_id);
     var element_time = li_time.childNodes[0];
     var new_time;
-    var time_array = element_time.innerHTML.split(":");
+    if (countdown_time == undefined){
+        countdown_time = element_time.innerHTML;
+    }
+    var time_array = countdown_time.split(":");
     var minutes = time_array[1];
     var hours = time_array[0];
     var certain_time = Math.floor((parseInt(minutes) + parseInt(hours)*60)/2);
-    console.log(certain_time);
-    if(certain_time > 60){
-        half_time[0] = Math.floor(certain_time/60);
-        half_time[1]= certain_time%60;
-        console.log(half_time);
-    }
-    if(certain_time < 60){
-        half_time[0] = 0;
-        half_time[1] =certain_time;
-        console.log(half_time);
-    }
+    var half_time = [Math.floor(certain_time/60), certain_time%60];
     var intervalId = setInterval(function () {
 
-        if(half_time[0] == parseInt(hours) && half_time[1] == parseInt(minutes)){
+        if(half_time[0] > parseInt(hours) || half_time[0] == parseInt(hours) && half_time[1] >= parseInt(minutes)){
             element_time.style.backgroundColor = "red";
         }
+
         if (minutes == 0 && hours != 0 ){
             hours = hours - 1;
             minutes = 59;
@@ -187,8 +182,6 @@ function drop(ev)
     countdown(task)
 };
 
-
-
 function countdown(task){
     if(task.status == "started"){
         observeTime(task._id)
@@ -206,61 +199,16 @@ function countdownSpecial(task){
     var li_time = document.getElementById(task._id);
     var element_time = li_time.childNodes[0];
     if(task.status == "started"){
-        var new_minutes;
-        var new_hours;
-        var time_in_DB = task.time;
-        var time_array = time_in_DB.split(":");
-        var minutes_DB = time_array[1];
-        var hours_DB = time_array[0];
-        var new_time = new Date().getTime();
-        var diff =(new_time - task.last_change)/1000;
-        var difference = Math.floor(diff);
-        var hour = difference/60;
-        var hours = Math.floor(hour);
-        var minutes = difference%60;
-        if (minutes < minutes_DB){
-            new_minutes =  minutes_DB - minutes;
-            new_hours = hours_DB - hours;
-        }
-        if(minutes > minutes_DB){
-            var raznica = minutes_DB - minutes
-            var minutes_dif = Math.abs(raznica);
-            new_minutes = 60 - minutes_dif;
-            hours = hours +1;
-            new_hours = hours_DB -hours;
-            if(new_hours < 0){
-                document.write("You lost your time");
-            }
-        }
-        new_time1 = [new_hours, new_minutes].join(':');
-        element_time.innerHTML = new_time1;
-        observeTimeSpecial(new_time1);
-    } else{
-        stopCountdown(task._id)
-    }
-}
-
-function observeTimeSpecial(new_time1) {
-    var half_time=[];
-    var time_array = new_time1.split(":");
-    var minutes = time_array[1];
-    var hours = time_array[0];
-    var intervalId = setInterval(function () {
-
-        if (minutes == 0 && hours != 0 ){
-            hours = hours - 1;
-            minutes = 59;
+        var diff = Math.floor((new Date().getTime()-task.last_change)/1000);
+        var time_array = task.time.split(":");
+        var minutesDB = time_array[0]*60 + parseInt(time_array[1]);
+        var minutesLasts = minutesDB - diff;
+        if (minutesLasts <= 0){
+            element_time.innerHTML = "0:00";
         } else {
-            minutes = minutes - 1;
+            var new_time1 = [Math.floor(minutesLasts/60), minutesLasts%60].join(':');
+            element_time.innerHTML = new_time1;
+            observeTime(task._id, new_time1);
         }
-        if(minutes < 10){
-            minutes = "0" +minutes;
-        }
-        new_time = [hours, minutes].join(':');
-        new_time1 = new_time;
-        if(hours == 0 && minutes == 0){
-            stopCountdown(new_time1);
-        }
-    }, 1000);
-    CONTEXT.intervalIds[new_time1] = intervalId;
+    }
 }
